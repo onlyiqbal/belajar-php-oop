@@ -4,19 +4,14 @@ require_once "data/LoginRequest.php";
 require_once "Helper/Validation.php";
 
 $loginRequest = new LoginRequest();
-
-// validateLoginRequest($loginRequest);
-// echo "VALID" . PHP_EOL;
+// $loginRequest->username = "iqbal";
+// $loginRequest->password = "qwerty";
 
 try {
     validateLoginRequest($loginRequest);
     echo "VALID" . PHP_EOL;
-} catch (ValidationException | Exception $exception) {
-    echo "Error : {$exception->getMessage()}" . PHP_EOL;
-    
-    //Debug Exception
-    print_r($exception->getTrace());
-    echo $exception->getTraceAsString();
-} finally {
-    echo "Error atau tidak tetep dieksekusi";
+    echo "username is: " . $loginRequest->username . PHP_EOL;
+    echo "password is: " . $loginRequest->password . PHP_EOL;
+} catch (ValidationException $exception) {
+    echo "Validation Error : " . $exception->getMessage() . PHP_EOL;
 }
