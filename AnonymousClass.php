@@ -5,8 +5,7 @@ interface HelloWorld
     function sayHello(): void;
 }
 
-$hellowordl = new class("budi") implements HelloWorld
-{
+$hellowordl = new class ("budi") implements HelloWorld {
     public string $name;
 
     // Constractor di Anonymous Class
@@ -17,7 +16,7 @@ $hellowordl = new class("budi") implements HelloWorld
 
     public function sayHello(): void
     {
-        echo "Helo World $this->name" . PHP_EOL;
+        echo "Hello $this->name" . PHP_EOL;
     }
 };
 
